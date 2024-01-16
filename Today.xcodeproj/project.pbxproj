@@ -9,19 +9,26 @@
 /* Begin PBXBuildFile section */
 		15E8B1002B5564AF0029C394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B0FF2B5564AF0029C394 /* AppDelegate.swift */; };
 		15E8B1022B5564AF0029C394 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1012B5564AF0029C394 /* SceneDelegate.swift */; };
-		15E8B1042B5564AF0029C394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1032B5564AF0029C394 /* ViewController.swift */; };
+		15E8B1042B5564AF0029C394 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1032B5564AF0029C394 /* ReminderListViewController.swift */; };
 		15E8B1092B5564B00029C394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E8B1082B5564B00029C394 /* Assets.xcassets */; };
 		15E8B10C2B5564B00029C394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E8B10A2B5564B00029C394 /* LaunchScreen.storyboard */; };
+		15E8B1152B5568080029C394 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 15E8B1142B5568080029C394 /* SnapKit */; };
+		15E8B1182B5568DD0029C394 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1172B5568DD0029C394 /* Reminder.swift */; };
+		15E8B11D2B55A0370029C394 /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B11C2B55A0370029C394 /* Date+Today.swift */; };
+		15E8B1202B55A43A0029C394 /* ReminderListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B11F2B55A43A0029C394 /* ReminderListViewController+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		15E8B0FC2B5564AF0029C394 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E8B0FF2B5564AF0029C394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E8B1012B5564AF0029C394 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		15E8B1032B5564AF0029C394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		15E8B1032B5564AF0029C394 /* ReminderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListViewController.swift; sourceTree = "<group>"; };
 		15E8B1082B5564B00029C394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15E8B10B2B5564B00029C394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15E8B10D2B5564B00029C394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15E8B1172B5568DD0029C394 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		15E8B11C2B55A0370029C394 /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
+		15E8B11F2B55A43A0029C394 /* ReminderListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListViewController+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15E8B1152B5568080029C394 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +64,31 @@
 			children = (
 				15E8B0FF2B5564AF0029C394 /* AppDelegate.swift */,
 				15E8B1012B5564AF0029C394 /* SceneDelegate.swift */,
-				15E8B1032B5564AF0029C394 /* ViewController.swift */,
+				15E8B11E2B55A3F20029C394 /* ListViewController */,
+				15E8B1162B5568980029C394 /* Models */,
 				15E8B1082B5564B00029C394 /* Assets.xcassets */,
 				15E8B10A2B5564B00029C394 /* LaunchScreen.storyboard */,
 				15E8B10D2B5564B00029C394 /* Info.plist */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		15E8B1162B5568980029C394 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15E8B1172B5568DD0029C394 /* Reminder.swift */,
+				15E8B11C2B55A0370029C394 /* Date+Today.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		15E8B11E2B55A3F20029C394 /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15E8B1032B5564AF0029C394 /* ReminderListViewController.swift */,
+				15E8B11F2B55A43A0029C394 /* ReminderListViewController+DataSource.swift */,
+			);
+			path = ListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +107,9 @@
 			dependencies = (
 			);
 			name = Today;
+			packageProductDependencies = (
+				15E8B1142B5568080029C394 /* SnapKit */,
+			);
 			productName = Today;
 			productReference = 15E8B0FC2B5564AF0029C394 /* Today.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 15E8B0F32B5564AF0029C394;
+			packageReferences = (
+				15E8B1132B5568080029C394 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 15E8B0FD2B5564AF0029C394 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,9 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15E8B1042B5564AF0029C394 /* ViewController.swift in Sources */,
+				15E8B1042B5564AF0029C394 /* ReminderListViewController.swift in Sources */,
+				15E8B11D2B55A0370029C394 /* Date+Today.swift in Sources */,
 				15E8B1002B5564AF0029C394 /* AppDelegate.swift in Sources */,
 				15E8B1022B5564AF0029C394 /* SceneDelegate.swift in Sources */,
+				15E8B1182B5568DD0029C394 /* Reminder.swift in Sources */,
+				15E8B1202B55A43A0029C394 /* ReminderListViewController+DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15E8B1132B5568080029C394 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15E8B1142B5568080029C394 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15E8B1132B5568080029C394 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15E8B0F42B5564AF0029C394 /* Project object */;
 }
