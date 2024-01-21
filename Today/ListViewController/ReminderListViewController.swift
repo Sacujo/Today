@@ -9,9 +9,10 @@ import UIKit
 import SnapKit
 
 class ReminderListViewController: UIViewController, UICollectionViewDelegate {
-    
-    
     var dataSource: DataSource!
+    var reminders: [Reminder] = Reminder.sampleData
+    
+
     
     private lazy var collectionView: UICollectionView = {
         let listLayout = listLayout()
@@ -30,17 +31,14 @@ class ReminderListViewController: UIViewController, UICollectionViewDelegate {
         let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         dataSource = DataSource(collectionView: collectionView) {
-                    (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Reminder) in
+            (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Reminder.ID) in
                     return collectionView.dequeueConfiguredReusableCell(
                         using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
-        var snapshot = Snapshot()
-        snapshot.appendSections([0])
-        snapshot.appendItems(Reminder.sampleData.map { $0 })
-        dataSource.apply(snapshot)
         collectionView.dataSource = dataSource
         
+        updateSnapshot()
         setupView()
         setupLayout()
     }
