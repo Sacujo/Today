@@ -28,6 +28,7 @@ class ReminderListViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         
         
+        
         let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         dataSource = DataSource(collectionView: collectionView) {
@@ -36,11 +37,30 @@ class ReminderListViewController: UIViewController, UICollectionViewDelegate {
                         using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
+        collectionView.delegate = self
         collectionView.dataSource = dataSource
         
         updateSnapshot()
         setupView()
         setupLayout()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        let id = reminders[indexPath.item].id
+        print("tapped \(id)")
+        pushDetailViewForReminder(withId: id)
+        return false
+    }
+    
+
+
+    
+    func pushDetailViewForReminder(withId id: Reminder.ID) {
+        let reminder = reminder(withId: id)
+        let viewController = ReminderViewController(reminder: reminder)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func listLayout() -> UICollectionViewCompositionalLayout {
