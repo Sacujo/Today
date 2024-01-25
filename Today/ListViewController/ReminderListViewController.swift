@@ -40,6 +40,13 @@ class ReminderListViewController: UIViewController, UICollectionViewDelegate {
         collectionView.delegate = self
         collectionView.dataSource = dataSource
         
+        if #available(iOS 16, *) {
+                    navigationItem.style = .editor
+                }
+        
+        navigationItem.title = NSLocalizedString("Reminder", comment: "Reminder view controller title")
+
+        
         updateSnapshot()
         setupView()
         setupLayout()
