@@ -20,6 +20,7 @@
 		15E8B1242B5D2CE40029C394 /* ReminderListViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1232B5D2CE40029C394 /* ReminderListViewController+Actions.swift */; };
 		15E8B1262B5E6A600029C394 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1252B5E6A600029C394 /* ReminderViewController.swift */; };
 		15E8B1292B6109BE0029C394 /* ReminderViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B1282B6109BE0029C394 /* ReminderViewController+Row.swift */; };
+		15E8B12B2B6251E50029C394 /* ReminderViewController+Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E8B12A2B6251E50029C394 /* ReminderViewController+Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		15E8B1232B5D2CE40029C394 /* ReminderListViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListViewController+Actions.swift"; sourceTree = "<group>"; };
 		15E8B1252B5E6A600029C394 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		15E8B1282B6109BE0029C394 /* ReminderViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+Row.swift"; sourceTree = "<group>"; };
+		15E8B12A2B6251E50029C394 /* ReminderViewController+Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+Section.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		15E8B1272B61093A0029C394 /* DetailViewController */ = {
 			isa = PBXGroup;
 			children = (
+				15E8B12A2B6251E50029C394 /* ReminderViewController+Section.swift */,
 				15E8B1252B5E6A600029C394 /* ReminderViewController.swift */,
 				15E8B1282B6109BE0029C394 /* ReminderViewController+Row.swift */,
 			);
@@ -191,6 +194,7 @@
 				15E8B1042B5564AF0029C394 /* ReminderListViewController.swift in Sources */,
 				15E8B11D2B55A0370029C394 /* Date+Today.swift in Sources */,
 				15E8B1002B5564AF0029C394 /* AppDelegate.swift in Sources */,
+				15E8B12B2B6251E50029C394 /* ReminderViewController+Section.swift in Sources */,
 				15E8B1022B5564AF0029C394 /* SceneDelegate.swift in Sources */,
 				15E8B1262B5E6A600029C394 /* ReminderViewController.swift in Sources */,
 				15E8B1292B6109BE0029C394 /* ReminderViewController+Row.swift in Sources */,
