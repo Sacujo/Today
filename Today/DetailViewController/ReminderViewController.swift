@@ -76,6 +76,7 @@ class ReminderViewController: UICollectionViewController {
         case .notes: return reminder.notes
         case .time: return reminder.dueDate.formatted(date: .omitted, time: .shortened)
         case .title: return reminder.title
+        default: return nil
         }
     }
 
@@ -87,9 +88,12 @@ class ReminderViewController: UICollectionViewController {
     }
     
     private func updateSnapshotForEditing() {
-        var snapShot = Snapshot()
-        snapShot.appendSections([.title, .date, .notes])
-        dataSource.apply(snapShot)
+        var snapshot = Snapshot()
+        snapshot.appendSections([.title, .date, .notes])
+        snapshot.appendItems([.header(Section.title.name)], toSection: .title)
+        snapshot.appendItems([.header(Section.date.name)], toSection: .date)
+        snapshot.appendItems([.header(Section.notes.name)], toSection: .notes)
+        dataSource.apply(snapshot)
     }
     
     private func section(for indexPath: IndexPath) -> Section {
