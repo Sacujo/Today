@@ -18,6 +18,7 @@ class ReminderViewController: UICollectionViewController {
         self.reminder = reminder
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
+        listConfiguration.headerMode = .firstItemInSection
         let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
         super.init(collectionViewLayout: listLayout)
     }
@@ -56,6 +57,10 @@ class ReminderViewController: UICollectionViewController {
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
         let section = section(for: indexPath)
         switch (section, row) {
+        case (_, .header(let title)):
+            var contentConfiguration = cell.defaultContentConfiguration()
+            contentConfiguration.text = title
+            cell.contentConfiguration = contentConfiguration
         case (.view, _):
             var contentConfiguration = cell.defaultContentConfiguration()
             contentConfiguration.text = text(for: row)
@@ -83,7 +88,7 @@ class ReminderViewController: UICollectionViewController {
     private func updateSnapshotForViewing() {
         var snapShot = Snapshot()
         snapShot.appendSections([.view])
-        snapShot.appendItems([Row.title, Row.date, Row.time, Row.notes], toSection: .view)
+        snapShot.appendItems([Row.header(""), Row.title, Row.date, Row.time, Row.notes], toSection: .view)
         dataSource.apply(snapShot)
     }
     
